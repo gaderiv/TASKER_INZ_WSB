@@ -1,4 +1,4 @@
-Application is based on TheCherno/Walnut App. Since I was looking for GUI I've decided to use it. Application that I'm developing with my team is tasker that wirjs with connecter from which task and user data is reade, If all tasks are done lock will react 
+Application is based on TheCherno/Walnut App. Since I was looking for GUI I've decided to use it. Application that I'm developing with my team is tasker that wirjs with connecter from which task and user data is reade, If all tasks are done lock will react. Bellow you will find all details about TheCherno/Walnut App
 
 # Walnut
 
