@@ -11,11 +11,19 @@ enum TaskStatus
 
 //czerwony kolor ImVec4(1.0f, 0.0f, 0.0f, 1.0f)
 
+//enum TaskPriority
+//{
+//	LOW,
+//	MEDIUM,
+//	HIGH
+//};
+
 struct Task
 {
 	std::string description;
 	bool completed;
 	TaskStatus status;
+	//TaskPriority priority;
 };
 
 std::vector<Task> tasks;
@@ -23,10 +31,59 @@ std::vector<int> ongoingTasks;
 std::vector<int> closedTasks;
 
 static char Input[256] = "";
-//static char editInput[256] = "";
 static bool TaskAdded = false;
 static int selectedTask = -1; //index zaznaczonych taskow do edycji
 
+static char username[256] = "";
+static char password[256] = "";
+static bool authenticated = false;
+//static TaskPriority selectedPriority = TaskPriority::LOW;
+
+//login
+void LoginForm()
+{
+	static bool checker = true;
+
+	ImGui::Begin("Login", nullptr, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoMove);
+	ImGui::SetWindowSize(ImVec2(400, 150));
+	ImGui::SetWindowPos(ImVec2((ImGui::GetIO().DisplaySize.x - ImGui::GetWindowSize().x) * 0.5f,
+								(ImGui::GetIO().DisplaySize.y - ImGui::GetWindowSize().y) * 0.5f));
+
+	//ImGuiInputTextFlags_EnterReturnsTrue sprawdzanie wcisniecia klawisza enter
+	ImGui::InputText("Username", username, 256, ImGuiInputTextFlags_EnterReturnsTrue);
+	if (ImGui::InputText("Password", password, 256, ImGuiInputTextFlags_Password | ImGuiInputTextFlags_EnterReturnsTrue))
+	{
+		//jesli uzytkownik kliknal enter zaloguj
+		if (strcmp(username, "Admin") == 0 && strcmp(password, "admin") == 0)
+		{
+			authenticated = true;
+		}
+		else
+		{
+			authenticated = false;
+			checker = false;
+		}
+	}
+
+	if (ImGui::Button("Login") || authenticated)
+	{
+		if (strcmp(username, "Admin") == 0 && strcmp(password, "admin") == 0)
+		{
+			authenticated = true;
+		}
+		else
+		{
+			authenticated = false;
+			checker = false;
+		}
+	}
+
+	if (!checker) 
+	{
+		ImGui::Text("Invalid username or password");
+	}
+	ImGui::End();
+}
 
 //Funkcja odpowiedzialna za popup i edytowanie taskow
 void Editor()
@@ -37,6 +94,9 @@ void Editor()
 		if (ImGui::BeginPopupModal("Edit Task", nullptr, ImGuiWindowFlags_AlwaysAutoResize))
 		{
 			ImGui::InputText("Task Description", Input, sizeof(Input));
+
+			//ImGui::Combo("Task Priority", (int*)&tasks[selectedTask].priority, "Low\0Medium\0High\0");
+
 			if (ImGui::Button("Save"))
 			{
 				tasks[selectedTask].description = Input;
@@ -220,6 +280,8 @@ void taskAddeer()
 	ImGui::Text("Task Description");
 	ImGui::SameLine();
 	ImGui::InputText("##Task Description", Input, sizeof(Input));
+	ImGui::SameLine();
+	//ImGui::Combo("Task Priority", (int*)&selectedPriority, "Low\0Medium\0High\0");
 
 	if (ImGui::Button("Add Task", ImVec2(150.0f, 0.0f)) && Input[0] != '\0' && !std::isspace(Input[0]))
 	{
@@ -245,16 +307,56 @@ void taskAddeer()
 	ImGui::End();
 }
 
+void theme()
+{
+	ImGuiStyle* style = &ImGui::GetStyle();
+
+	style->WindowBorderSize = 0;
+	style->WindowTitleAlign = ImVec2(0.5, 0.5);
+	style->WindowMinSize = ImVec2(200, 400);
+
+	style->FramePadding = ImVec2(8, 6);
+
+	style->Colors[ImGuiCol_TitleBg] = ImColor(255, 101, 53, 255);
+	style->Colors[ImGuiCol_TitleBgActive] = ImColor(255, 101, 53, 255);
+	style->Colors[ImGuiCol_TitleBgCollapsed] = ImColor(0, 0, 0, 130);
+
+	style->Colors[ImGuiCol_Button] = ImColor(31, 30, 31, 255);
+	style->Colors[ImGuiCol_ButtonActive] = ImColor(41, 40, 41, 255);
+	style->Colors[ImGuiCol_ButtonHovered] = ImColor(41, 40, 41, 255);
+
+	style->Colors[ImGuiCol_Separator] = ImColor(70, 70, 70, 255);
+	style->Colors[ImGuiCol_SeparatorActive] = ImColor(76, 76, 76, 255);
+	style->Colors[ImGuiCol_SeparatorHovered] = ImColor(76, 76, 76, 255);
+
+	style->Colors[ImGuiCol_FrameBg] = ImColor(37, 36, 37, 255);
+	style->Colors[ImGuiCol_FrameBgActive] = ImColor(37, 36, 37, 255);
+	style->Colors[ImGuiCol_FrameBgHovered] = ImColor(37, 36, 37, 255);
+
+	style->Colors[ImGuiCol_Header] = ImColor(0, 0, 0, 0);
+	style->Colors[ImGuiCol_HeaderActive] = ImColor(0, 0, 0, 0);
+	style->Colors[ImGuiCol_HeaderHovered] = ImColor(46, 46, 46, 255);
+}
+
+
 class ExampleLayer : public Walnut::Layer
 {
 public:
-
+	
 	virtual void OnUIRender() override
 	{
-		
+		theme();
+		if (!authenticated) 
+		{
+			LoginForm();
+			return;
+		}
+
 		taskAddeer();
 		Editor();
 		StatusDashboard();
+
+
 
 		//ImGui::ShowDemoWindow();
 	}
@@ -279,6 +381,26 @@ Walnut::Application* Walnut::CreateApplication(int argc, char** argv)
 			}
 			ImGui::EndMenu();
 		}
+		if (authenticated)
+		{
+			ImGui::SetCursorPosX(ImGui::GetWindowWidth() - ImGui::CalcTextSize("Right-aligned text").x);
+			if (ImGui::BeginMenu("##Account"))
+			{
+				if (ImGui::MenuItem("Logut"))
+				{
+					authenticated = false;
+				}
+				ImGui::EndMenu();
+			}
+		}
+		
+
+	// dodaj username na pasku menu
+	ImGui::SetCursorPosX(ImGui::GetWindowWidth() - ImGui::CalcTextSize("Right-aligned text").x);
+	if (authenticated)
+	{
+		ImGui::Text("Welcome, %s", username); 
+	}
 
 		
 	});
