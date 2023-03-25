@@ -1,3 +1,5 @@
+Application is based on TheCherno/Walnut App. Since I was looking for GUI I've decided to use it. Application that I'm developing with my team is tasker that wirjs with connecter from which task and user data is reade, If all tasks are done lock will react. Bellow you will find all details about TheCherno/Walnut App
+
 # Walnut
 
 Walnut is a simple application framework built with Dear ImGui and designed to be used with Vulkan - basically this means you can seemlessly blend real-time Vulkan rendering with a great UI library to build desktop applications. The plan is to expand Walnut to include common utilities to make immediate-mode desktop apps and simple Vulkan applications.
