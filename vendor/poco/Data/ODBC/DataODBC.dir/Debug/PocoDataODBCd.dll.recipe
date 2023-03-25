@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\x64\Debug\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\bin\Debug\PocoFoundationd.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\bin\Debug\PocoDatad.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\bin\Debug\PocoDataODBCd.dll</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

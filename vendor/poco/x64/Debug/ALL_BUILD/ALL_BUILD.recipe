@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\x64\Debug\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\bin\Debug\PocoFoundationd.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\bin\Debug\PocoDatad.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\bin\Debug\PocoActiveRecordd.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\bin\Debug\PocoJSONd.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\bin\Debug\PocoXMLd.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\bin\Debug\PocoUtild.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\bin\Debug\arc.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\bin\Debug\PocoDataODBCd.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\bin\Debug\PocoDataSQLited.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\bin\Debug\PocoEncodingsd.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\bin\Debug\f2cpsp.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\bin\Debug\PocoNetd.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\bin\Debug\PocoMongoDBd.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\bin\Debug\cpspc.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\bin\Debug\PocoPrometheusd.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\bin\Debug\PocoRedisd.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\bin\Debug\PocoZipd.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\gader\OneDrive\Documents\Gaderiv\Inzynierka\git\INZ_WSB\vendor\poco\x64\Debug\ALL_BUILD</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>
